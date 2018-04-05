@@ -65,6 +65,7 @@ ion-header {
 ion-tabs {
   .tabbar {
     background-color: #FFF !important;
+    border: none !important;
   }
 
   a.tab-button[aria-selected="true"] {

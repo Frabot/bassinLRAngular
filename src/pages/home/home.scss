@@ -5,4 +5,97 @@ page-home {
     display: inline-block;
     float: left;
   }
+
+
+  ion-grid{
+    height: 100%;
+    padding: 0;
+    position: relative;
+    &.grid{
+      padding: 0;
+    }
+  }
+
+  ion-row {
+    color: #FFF;
+    ion-col {
+      display: block;
+      height: 100%;
+      padding: 0 !important;
+    }
+
+    /***** Premier rang  *****/
+    &:nth-child(1) {
+      height :40%;
+      background-image: url('../../assets/imgs/musee_maritime.jpeg');
+      background-size: contain;
+      div{
+        height: 30%;
+        background: rgba(200,202,204,0.6);
+        display: block;
+        ion-icon {
+          float: right;
+          display: block;
+          margin-top: 4%;
+          margin-right: 5%;
+          font-size: 4rem;
+        }
+      }
+    }
+
+    /***** Second rang  *****/
+    &:nth-child(2) {
+      height: 35%;
+      background-image: url('../../assets/imgs/map.png');
+      background-size: 80% auto;
+      ion-col:nth-child(1) {
+        background: rgba(241,170,48,0.6);
+        img {
+          height: 55%;
+          margin-top: 20%;
+          margin-left: 5%;
+          float: left;
+        }
+        h3 {
+          margin-top: 40%;
+        }
+      }
+      ion-col:nth-child(2) {
+        background-color: #f1aa30;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        ion-icon {
+          font-size: 7rem;
+          display: block;
+        }
+      }
+    }
+
+    /***** Troisieme rang  *****/
+    &:nth-child(3) {
+      height: 25%;
+      ion-col {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        ion-icon {
+          margin-top: 10%;
+          font-size: 6rem;
+          display: block;
+        }
+        &:nth-child(1){
+          background: #871d20;
+        }
+        &:nth-child(2){
+          background: #455387;
+        }
+      }
+    }
+  }
 }
