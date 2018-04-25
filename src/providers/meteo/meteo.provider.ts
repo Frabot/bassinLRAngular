@@ -10,7 +10,7 @@ import { Meteo } from "../model-class/model-class";
 */
 @Injectable()
 export class MeteoProvider {
-
+    test;
     //Meteo url
     private meteoServiceUrl = 'http://api.openweathermap.org/data/2.5/weather?id=6455645&units=metric&appid=beb6d67aa9bb26aa970e17c2da6a9bb4';
 
@@ -18,10 +18,12 @@ export class MeteoProvider {
         console.log('Hello MeteoProvider Provider');
     }
 
-    getMeteo():Promise<Meteo> {
+    getMeteo(){
         return new Promise(resolve => {
-            this.http.get(this.meteoServiceUrl).subscribe((data: any) => {
+            this.http.get(this.meteoServiceUrl).subscribe((data:any) =>{
                 resolve(data);
+            },err => {
+                console.log(err);
             });
         });
     }

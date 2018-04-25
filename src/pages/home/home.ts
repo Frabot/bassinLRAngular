@@ -4,23 +4,30 @@ import {BateauPage} from "../bateau/bateau";
 import {MuseePage} from "../musee/musee";
 import {MeteoPage} from "../meteo/meteo";
 import {TemoignagePage} from "../temoignage/temoignage";
+import {MeteoProvider} from "../../providers/meteo/meteo.provider";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  test;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private meteoService: MeteoProvider) {
 
   }
 
   ngOnInit() {
-
+      //Appel du service meteo pour la homepage
+      this.meteoService.getMeteo().then( (data:any)=> {
+          this.test = data;
+          console.log(this.test);
+      });
   }
 
+
+
     goToPage(page){
-      console.log("AHHHHH");
         switch(page){
             case "Musee":
                 this.navCtrl.push(MuseePage);
