@@ -1,0 +1,43 @@
+page-liste-temoignages {
+  .scroll-content{
+    padding: 0 !important;
+  }
+
+  .list-ios {
+    margin-bottom: 0 !important;
+  }
+
+  ion-item {
+    ion-label {
+      white-space: normal;
+      p {
+        font-size: 1rem !important;
+      }
+    }
+  }
+
+  .list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+  }
+  .list .item.item-accordion.ng-hide {
+    line-height: 0px;
+  }
+  .list .item.item-accordion.ng-hide-add,
+  .list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+  }
+
+  .item-accordion {
+    display: none !important;
+  }
+  .selected .itemOuvert {
+    display: block !important;
+  }
+
+  .selected .itemFerme {
+    display: none !important;
+  }
+}

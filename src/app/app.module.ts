@@ -13,6 +13,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MeteoProvider } from '../providers/meteo/meteo.provider';
 import { ApiSymfonyProvider } from '../providers/api-symfony/api-symfony.provider';
+import {MeteoPage} from "../pages/meteo/meteo";
+import {MuseePage} from "../pages/musee/musee";
+import {TemoignagePage} from "../pages/temoignage/temoignage";
+import {ListeTemoignagesPage} from "../pages/liste-temoignages/liste-temoignages";
+import {ListeBateauxPage} from "../pages/liste-bateaux/liste-bateaux";
 
 @NgModule({
   declarations: [
@@ -20,7 +25,12 @@ import { ApiSymfonyProvider } from '../providers/api-symfony/api-symfony.provide
     GaleriePage,
     BateauPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MuseePage,
+    ListeTemoignagesPage,
+    TemoignagePage,
+    MeteoPage,
+    ListeBateauxPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +43,12 @@ import { ApiSymfonyProvider } from '../providers/api-symfony/api-symfony.provide
     GaleriePage,
     BateauPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MuseePage,
+    ListeTemoignagesPage,
+    TemoignagePage,
+    MeteoPage,
+    ListeBateauxPage
   ],
   providers: [
     StatusBar,

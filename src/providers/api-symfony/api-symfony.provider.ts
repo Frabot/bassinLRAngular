@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import 'rxjs/add/operator/map';
 /*
   Generated class for the ApiSymfonyProvider provider.
 
@@ -10,8 +10,40 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiSymfonyProvider {
 
+    //Meteo url
+  private urlApiSymfonyBase = 'http://127.0.0.1:8000/';
+
   constructor(public http: HttpClient) {
     console.log('Hello ApiSymfonyProvider Provider');
   }
 
+  getInfoMusee(idMusee){
+    return new Promise(resolve => {
+        this.http.get(this.urlApiSymfonyBase + 'musee/' + idMusee).subscribe((data:any) =>{
+            resolve(data);
+        },err => {
+            console.log(err);
+        });
+    });
+  }
+
+  getAllBateaux() {
+      return new Promise(resolve => {
+          this.http.get(this.urlApiSymfonyBase + 'bateaux').subscribe((data:any) =>{
+              resolve(data);
+          },err => {
+              console.log(err);
+          });
+      });
+  }
+
+    getAllTemoins() {
+        return new Promise(resolve => {
+            this.http.get(this.urlApiSymfonyBase + 'temoins').subscribe((data:any) =>{
+                resolve(data);
+            },err => {
+                console.log(err);
+            });
+        });
+    }
 }

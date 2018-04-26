@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {BateauPage} from "../bateau/bateau";
 import {MuseePage} from "../musee/musee";
 import {MeteoPage} from "../meteo/meteo";
-import {TemoignagePage} from "../temoignage/temoignage";
 import {MeteoProvider} from "../../providers/meteo/meteo.provider";
+import {ApiSymfonyProvider} from "../../providers/api-symfony/api-symfony.provider";
+import {Meteo} from "../../providers/model-class/model-class";
+import {ListeTemoignagesPage} from "../liste-temoignages/liste-temoignages";
+import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  test;
+  meteo: Meteo[];
+  //Car il n'y a qu'un musee dans tous les cas
+  heureActuelle = new Date().getHours();
 
-  constructor(public navCtrl: NavController, private meteoService: MeteoProvider) {
+    constructor(public navCtrl: NavController, private meteoService: MeteoProvider, private apiSymfonyService: ApiSymfonyProvider) {
 
   }
 
   ngOnInit() {
+
+
       //Appel du service meteo pour la homepage
-      this.meteoService.getMeteo().then( (data:any)=> {
-          this.test = data;
-          console.log(this.test);
+      this.meteoService.getMeteo().then( (data:Meteo[])=> {
+          this.meteo = data;
+          console.log(this.meteo);
       });
+
   }
 
 
@@ -32,14 +39,14 @@ export class HomePage {
             case "Musee":
                 this.navCtrl.push(MuseePage);
                 break;
-            case "Bateaux":
-                this.navCtrl.push(BateauPage);
+            case "Liste_bateaux":
+                this.navCtrl.push(ListeBateauxPage);
                 break;
             case "Meteo":
                 this.navCtrl.push(MeteoPage);
                 break;
-            case "Temoignage":
-                this.navCtrl.push(TemoignagePage);
+            case "Liste_temoignages":
+                this.navCtrl.push(ListeTemoignagesPage);
                 break;
         }
     }

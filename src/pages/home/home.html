@@ -14,13 +14,14 @@
         <ion-row>
             <ion-col col-12>
                 <div (click)="goToPage('Musee')">
+                    <h3>Musée Maritime</h3>
                     <ion-icon name="arrow-forward"></ion-icon>
                 </div>
             </ion-col>
         </ion-row>
 
         <!--- Second rang --->
-        <ion-row (click)="goToPage('Bateaux')">
+        <ion-row (click)="goToPage('Liste_bateaux')">
             <ion-col col-9>
                 <img src="../../assets/imgs/grand_bateau.svg">
                 <h3>Les bateaux</h3>
@@ -33,10 +34,9 @@
         <!--- Troisieme rang --->
         <ion-row>
             <ion-col (click)="goToPage('Meteo')" col-6>
-                {{test.weather.icon}}
                 <h5>Météo</h5>
             </ion-col>
-            <ion-col (click)="goToPage('Temoignage')" col-6>
+            <ion-col (click)="goToPage('Liste_temoignages')" col-6>
                 <ion-icon name="chatbubbles"></ion-icon>
                 <h5>Témoignages</h5>
             </ion-col>
