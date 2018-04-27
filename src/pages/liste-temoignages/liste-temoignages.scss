@@ -3,11 +3,19 @@ page-liste-temoignages {
     padding: 0 !important;
   }
 
+  .toolbar-title {
+    overflow: visible !important;
+  }
+  .back-button{
+    color: #000 !important;
+  }
+
   .list-ios {
     margin-bottom: 0 !important;
   }
 
   ion-item {
+    cursor: pointer;
     ion-label {
       white-space: normal;
       p {
@@ -18,8 +26,13 @@ page-liste-temoignages {
 
   .list .item.item-accordion {
     line-height: 38px;
+    p {
+      color: #FFF !important;
+    }
+    background-color: #8e9093;
     padding-top: 0;
     padding-bottom: 0;
+    padding-left: 4rem;
     transition: 0.09s all linear;
   }
   .list .item.item-accordion.ng-hide {

@@ -73,15 +73,3 @@ export class Temoignage {
 
     ){}
 }
-
-export class GalerieBateaux {
-    constructor (
-        public image: string
-    ){}
-}
-
-export class GalerieTemoignages {
-    constructor (
-        public photo_temoignage: string
-    ){}
-}

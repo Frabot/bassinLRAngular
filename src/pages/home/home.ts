@@ -12,7 +12,9 @@ import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  meteo: Meteo[];
+  meteo: Meteo;
+
+  //Pour faire apparaitre l'horloge correspondante
   horlogeRouge = true;
   //Car il n'y a qu'un musee dans tous les cas
   heureActuelle = new Date().getHours();
@@ -22,10 +24,14 @@ export class HomePage {
   }
 
   ngOnInit() {
-
+        //Ne marche pas meme si donnees sont dans console.log
+      this.meteoService.getMeteo().then((data: Meteo) => {
+          this.meteo = data;
+      });
         //Apparition texte horaire
       if (this.heureActuelle >= 10 && this.heureActuelle <= 2) {
           this.horlogeRouge = false;
+          console.log(this.heureActuelle);
       } else {
           this.horlogeRouge = true;
       }

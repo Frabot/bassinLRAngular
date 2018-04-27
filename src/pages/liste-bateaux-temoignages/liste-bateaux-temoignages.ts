@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Temoin} from "../../providers/model-class/model-class";
+import {Bateau, Temoin} from "../../providers/model-class/model-class";
 
 /**
  * Generated class for the ListeBateauxTemoignagesPage page.
@@ -15,14 +15,14 @@ import {Temoin} from "../../providers/model-class/model-class";
   templateUrl: 'liste-bateaux-temoignages.html',
 })
 export class ListeBateauxTemoignagesPage {
-    public temoins: Temoin[];
+    public bateau: Bateau;
     shouldShow;
 
     //Pour verifier la selection d
     selectedTemoin : Temoin;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.temoins = this.navParams.get('temoins');
+        this.bateau = this.navParams.get('bateau');
     }
 
     ngOnInit() {

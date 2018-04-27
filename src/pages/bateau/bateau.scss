@@ -1,11 +1,21 @@
 page-bateau {
+  .back-button{
+    color: #000 !important;
+  }
     ion-content,
     .scroll-content,
     ion-grid
     {
       padding : 0px !important;
     }
+    ion-list{
+      margin-bottom: 0 !important;
+    }
 
+    button.darkblue{
+      background-color: #374c92 !important;
+      margin:0;
+    }
     .textContainer {
       padding: 1rem 2rem;
     }

@@ -7,12 +7,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>temoignage</ion-title>
+    <ion-title>Le Témoignage</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-{{temoignage.commentaire}}
+    <ion-grid>
+        <ion-row align-items-center >
+            <ion-col col-12 no-padding text-center>
+                <img src="assets/imgs/temoignages/{{temoignage.photo_temoignage}}"/>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div class="textContainer">
+
+        <p>
+            <strong>{{temoignage.titre}}</strong>
+        </p>
+
+
+        <p class="justify" margin-left>
+            {{temoignage.commentaire}}
+        </p>
+
+
+
+    </div>
 </ion-content>

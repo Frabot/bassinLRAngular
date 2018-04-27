@@ -1,9 +1,18 @@
 page-galerie {
   ion-content {
     .pic {
-      display: table-cell;
-      height:100px;
+      display: inline-block;
+      height: 100px;
+      margin: 0.5rem;
       width: auto;
+      img {
+        height: 100%;
+        width: auto;
+        display: block;
+      }
     }
+  }
+  .back-button{
+    color: #000 !important;
   }
 }

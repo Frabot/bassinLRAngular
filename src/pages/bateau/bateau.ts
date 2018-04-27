@@ -18,7 +18,7 @@ export class BateauPage {
 
     }
 
-    voirTemoignages(temoins):void {
-        this.navCtrl.push(ListeBateauxTemoignagesPage, {'temoins': temoins});
+    voirTemoignages(bateau):void {
+        this.navCtrl.push(ListeBateauxTemoignagesPage, {'bateau': bateau});
     }
 }

@@ -17,7 +17,9 @@
 ion-app {
   font-family: 'Montserrat', sans-serif !important;
 }
-
+back-button {
+  color: #FFF !important;
+}
 ion-icon {
   &[class*="custom-"] {
     // Instead of using the font-based icons

@@ -1,3 +1,15 @@
 page-temoignage {
+  .back-button{
+    color: #000 !important;
+  }
 
+  ion-content,
+  .scroll-content,
+  ion-grid
+  {
+    padding : 0px !important;
+  }
+  .textContainer {
+    padding: 1rem 2rem;
+  }
 }
