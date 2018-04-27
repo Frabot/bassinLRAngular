@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import {NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -18,6 +18,7 @@ import {MuseePage} from "../pages/musee/musee";
 import {TemoignagePage} from "../pages/temoignage/temoignage";
 import {ListeTemoignagesPage} from "../pages/liste-temoignages/liste-temoignages";
 import {ListeBateauxPage} from "../pages/liste-bateaux/liste-bateaux";
+import {ListeBateauxTemoignagesPage} from "../pages/liste-bateaux-temoignages/liste-bateaux-temoignages";
 
 @NgModule({
   declarations: [
@@ -30,12 +31,15 @@ import {ListeBateauxPage} from "../pages/liste-bateaux/liste-bateaux";
     ListeTemoignagesPage,
     TemoignagePage,
     MeteoPage,
-    ListeBateauxPage
+    ListeBateauxPage,
+    ListeBateauxTemoignagesPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp , {
+        backButtonText: ''
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,8 +52,10 @@ import {ListeBateauxPage} from "../pages/liste-bateaux/liste-bateaux";
     ListeTemoignagesPage,
     TemoignagePage,
     MeteoPage,
-    ListeBateauxPage
+    ListeBateauxPage,
+    ListeBateauxTemoignagesPage
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -6,10 +6,32 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+    <ion-grid>
+      <ion-row align-items-center >
+        <ion-col col-12 no-padding text-center>
+          <img src="assets/imgs/bateaux/{{bateau.image}}"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="textContainer">
+
+      <p>
+        <strong>Nom : </strong> {{bateau.nom}}
+      </p>
+
+      <p>
+          <strong>Année de création : </strong> {{bateau.anneecreation}}
+      </p>
+
+      <p>
+          <strong>Histoire : </strong>
+      </p>
+      <p>
+        {{bateau.histoire}}
+      </p>
+      <div>
+        <ion-button (click)="voirTemoignages(temoins)" col-6>Les témoignages</ion-button>
+     </div>
+    </div>
   </ion-list>
 </ion-content>

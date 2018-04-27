@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>liste-bateaux</ion-title>
+    <ion-title>Les Bateaux</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,9 +15,11 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let bateau of bateaux" click="itemTapped(bateau)">
+    <ion-item *ngFor="let bateau of bateaux" (click)="bateauSelectionne(bateau)">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/bateaux/{{bateau.image}}">
+      </ion-thumbnail>
       <h2>{{bateau.nom}}</h2>
-      <p>{{bateau.image}}</p>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import {MuseePage} from "../musee/musee";
 import {MeteoPage} from "../meteo/meteo";
 import {MeteoProvider} from "../../providers/meteo/meteo.provider";
-import {ApiSymfonyProvider} from "../../providers/api-symfony/api-symfony.provider";
 import {Meteo} from "../../providers/model-class/model-class";
 import {ListeTemoignagesPage} from "../liste-temoignages/liste-temoignages";
 import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
@@ -14,22 +13,23 @@ import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
 })
 export class HomePage {
   meteo: Meteo[];
+  horlogeRouge = true;
   //Car il n'y a qu'un musee dans tous les cas
   heureActuelle = new Date().getHours();
 
-    constructor(public navCtrl: NavController, private meteoService: MeteoProvider, private apiSymfonyService: ApiSymfonyProvider) {
+    constructor(public navCtrl: NavController, private meteoService: MeteoProvider) {
 
   }
 
   ngOnInit() {
 
-
-      //Appel du service meteo pour la homepage
-      this.meteoService.getMeteo().then( (data:Meteo[])=> {
-          this.meteo = data;
-          console.log(this.meteo);
-      });
-
+      if (this.heureActuelle >= 10 && this.heureActuelle <= 2) {
+          document.body.style.background = "Red";
+          this.horlogeRouge = false;
+      } else {
+          document.body.style.background = "Blue";
+          console.log("hoooo");
+      }
   }
 
 

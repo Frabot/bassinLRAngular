@@ -46,4 +46,15 @@ export class ApiSymfonyProvider {
             });
         });
     }
+
+    //Pour chercher les images de temoignages
+    getAllTemoignages() {
+        return new Promise(resolve => {
+            this.http.get(this.urlApiSymfonyBase + 'galerietemoignages').subscribe((data:any) =>{
+                resolve(data);
+            },err => {
+                console.log(err);
+            });
+        });
+    }
 }

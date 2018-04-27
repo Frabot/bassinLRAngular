@@ -5,5 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-
+    <div *ngFor="let photoB of bateaux" class="pic">
+        <img src="assets/imgs/bateaux/{{photoB.image}}"/>
+    </div>
+    <!-- N'apparait pas je ne suis pas sure de la raison -->
+    <div *ngFor="let photoT of temoignages">
+        <img src="assets/imgs/temoignages/{{photoT.photo_temoignage}}"/>
+    </div>
 </ion-content>

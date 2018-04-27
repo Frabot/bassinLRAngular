@@ -1,3 +1,9 @@
-page-about {
-
+page-galerie {
+  ion-content {
+    .pic {
+      display: table-cell;
+      height:100px;
+      width: auto;
+    }
+  }
 }

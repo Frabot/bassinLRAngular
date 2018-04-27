@@ -44,7 +44,7 @@ export class Bateau {
     constructor (
         public id: number,
         public nom: string,
-        public annecreation: number,
+        public anneecreation: number,
         public histoire: string,
         public image: string,
         public lat: number,
@@ -71,5 +71,17 @@ export class Temoignage {
         public photo_temoignage: number,
         public commentaire: string
 
+    ){}
+}
+
+export class GalerieBateaux {
+    constructor (
+        public image: string
+    ){}
+}
+
+export class GalerieTemoignages {
+    constructor (
+        public photo_temoignage: string
     ){}
 }
