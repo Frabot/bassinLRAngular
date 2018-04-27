@@ -15,11 +15,11 @@ export class HomePage {
   //meteo: Meteo;
 
   //Pour faire apparaitre l'horloge correspondante
-  horlogeVerte = true;
+  horlogeRouge = true;
   //Car il n'y a qu'un musee dans tous les cas
   heureActuelle = new Date().getHours();
 
-    constructor(public navCtrl: NavController, private meteoService: MeteoProvider) {
+    constructor(public navCtrl: NavController) {
 
   }
 
@@ -30,10 +30,10 @@ export class HomePage {
       });*/
         //Apparition texte horaire
       if (this.heureActuelle >= 9 && this.heureActuelle <= 2) {
-          this.horlogeVerte = false;
+          this.horlogeRouge = false;
           console.log(this.heureActuelle);
       } else {
-          this.horlogeVerte = true;
+          this.horlogeRouge = true;
       }
   }
 
