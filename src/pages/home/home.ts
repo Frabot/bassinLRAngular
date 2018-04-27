@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import {MuseePage} from "../musee/musee";
 import {MeteoPage} from "../meteo/meteo";
 import {MeteoProvider} from "../../providers/meteo/meteo.provider";
-import {Meteo} from "../../providers/model-class/model-class";
+//import {Meteo} from "../../providers/model-class/model-class";
 import {ListeTemoignagesPage} from "../liste-temoignages/liste-temoignages";
 import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
 
@@ -12,10 +12,10 @@ import {ListeBateauxPage} from "../liste-bateaux/liste-bateaux";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  meteo: Meteo;
+  //meteo: Meteo;
 
   //Pour faire apparaitre l'horloge correspondante
-  horlogeRouge = true;
+  horlogeVerte = true;
   //Car il n'y a qu'un musee dans tous les cas
   heureActuelle = new Date().getHours();
 
@@ -25,15 +25,15 @@ export class HomePage {
 
   ngOnInit() {
         //Ne marche pas meme si donnees sont dans console.log
-      this.meteoService.getMeteo().then((data: Meteo) => {
+      /*this.meteoService.getMeteo().then((data: Meteo) => {
           this.meteo = data;
-      });
+      });*/
         //Apparition texte horaire
-      if (this.heureActuelle >= 10 && this.heureActuelle <= 2) {
-          this.horlogeRouge = false;
+      if (this.heureActuelle >= 9 && this.heureActuelle <= 2) {
+          this.horlogeVerte = false;
           console.log(this.heureActuelle);
       } else {
-          this.horlogeRouge = true;
+          this.horlogeVerte = true;
       }
   }
 
