@@ -13,10 +13,19 @@
         <!--- Premier rang --->
         <ion-row>
             <ion-col col-12>
-                <div (click)="goToPage('Musee')">
+                <div class="gris" (click)="goToPage('Musee')">
+
+                    <img *ngIf="horlogeRouge" src="../../assets/imgs/clockrouge.png">
+                    <img *ngIf="!horlogeRouge" src="../../assets/imgs/clockverte.png">
+
                     <h3>Musée Maritime</h3>
-                    <div *ngIf="horlogeRouge">
-                        </div>
+
+                    <p *ngIf="!horlogeRouge">Ouvert</p>
+                    <p *ngIf="horlogeRouge">Fermé</p>
+
+                    <p>10H - 2H</p>
+
+
                     <ion-icon name="arrow-forward"></ion-icon>
                 </div>
             </ion-col>

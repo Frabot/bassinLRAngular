@@ -29,15 +29,33 @@ page-home {
       height :40%;
       background-image: url('../../assets/imgs/musee_maritime.jpg');
       background-size: contain;
-      div{
-        height: 30%;
+      h3{
+        margin-top: 0;
+        display: table-cell;
+      }
+      .gris {
+        padding: 1rem;
+        height: auto;
+        position: relative;
         background: rgba(200,202,204,0.6);
         display: block;
-        ion-icon {
-          float: right;
+        img {
+          float: left;
+          margin-top : 1.3rem;
+          margin-right: 1rem;
           display: block;
-          margin-top: 4%;
-          margin-right: 5%;
+          width: 40px;
+          height: auto;
+        }
+        p {
+          margin: 0;
+          display: block;
+        }
+        ion-icon {
+          position: absolute;
+          right: 1rem;
+          top: 2rem;
+          display: block;
           font-size: 4rem;
         }
       }

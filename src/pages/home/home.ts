@@ -23,12 +23,11 @@ export class HomePage {
 
   ngOnInit() {
 
+        //Apparition texte horaire
       if (this.heureActuelle >= 10 && this.heureActuelle <= 2) {
-          document.body.style.background = "Red";
           this.horlogeRouge = false;
       } else {
-          document.body.style.background = "Blue";
-          console.log("hoooo");
+          this.horlogeRouge = true;
       }
   }
 
