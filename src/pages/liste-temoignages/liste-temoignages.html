@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <ion-list >
-        <div *ngFor="let temoin of bateau.temoins" [class.selected]="temoin === selectedTemoin" (click)="shouldShow = !shouldShow;onSelect(temoin)">
+        <div *ngFor="let temoin of temoins" [class.selected]="temoin === selectedTemoin" (click)="shouldShow = !shouldShow;onSelect(temoin)">
     <ion-item class="item-stable">
         <ion-thumbnail item-start>
             <img src="assets/imgs/temoins/{{temoin.photo_temoin}}">

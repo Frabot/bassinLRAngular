@@ -17,16 +17,6 @@ export class ApiSymfonyProvider {
     console.log('Hello ApiSymfonyProvider Provider');
   }
 
-  getInfoMusee(idMusee){
-    return new Promise(resolve => {
-        this.http.get(this.urlApiSymfonyBase + 'musee/' + idMusee).subscribe((data:any) =>{
-            resolve(data);
-        },err => {
-            console.log(err);
-        });
-    });
-  }
-
   getAllBateaux() {
       return new Promise(resolve => {
           this.http.get(this.urlApiSymfonyBase + 'bateaux').subscribe((data:any) =>{
